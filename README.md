@@ -10,6 +10,7 @@ Welcome to the Todo List application! This is a web application built using Elix
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Notes](#notes)
 
 ## Features
 
@@ -38,25 +39,15 @@ To get started with this project, follow these steps:
    cd todo_list
    ```
 
-2. **Install Dependencies**
+2. **Setup and Start the Application**
 
-   Ensure you have [Elixir](https://elixir-lang.org/install.html) and [Phoenix](https://www.phoenixframework.org/) installed. Then, install the necessary dependencies:
-
-   ```sh
-   mix deps.get
-   ```
-
-3. **Setup the Database**
-
-   Run the Docker compose file:
+   Ensure you have Docker and Docker Compose installed. Run the following command to build and start the containers:
 
    ```sh
    docker compose up --build
    ```
 
-4. **Start the Phoenix Server**
-
-   The Phoenix server will start automatically with Docker. Access the application at `http://localhost:4000`.
+   The application will be available at `http://localhost:4000`.
 
 ## Usage
 
@@ -86,6 +77,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Notes
 
-The project will be hosted on AWS in the future, and no longer will be needed to clone it.
+The project will be hosted on AWS in the future, so no longer will be needed to clone it.
 
 ---
