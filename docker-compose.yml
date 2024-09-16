@@ -1,0 +1,44 @@
+services:
+  app:
+    build: .
+    command: "./bin/todo_list start"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      PHX_SERVER: "true"
+      PORT: 4000
+      MAILGUN_API_KEY: ${API_KEY}
+      MAILGUN_DOMAIN: "bubastodolist.me"
+      #BASE_URL: "https://api.mailgun.net/v3"
+    depends_on:
+      - postgres
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+
+  migrate:
+    build: .
+    command: "./bin/todo_list eval TodoList.Release.migrate"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      PHX_SERVER: "true"
+      PORT: 4000
+    depends_on:
+      - postgres
+    restart: on-failure
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: todo_list
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
