@@ -3,6 +3,7 @@ services:
     build: .
     command: "./bin/todo_list start"
     environment:
+      PHX_HOST: "localhost"
       DATABASE_URL: ${DATABASE_URL}
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       PHX_SERVER: "true"
