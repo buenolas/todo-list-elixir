@@ -65,6 +65,8 @@ To get started with this project, follow these steps:
 
 ## Usage
 
+https://github.com/user-attachments/assets/7a19f321-a0a5-4ec8-a81c-ec564140f03f
+
 1. **User Registration and Login**
 
    - Navigate to `http://localhost:4000` to create a new account.
