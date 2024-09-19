@@ -35,11 +35,25 @@ To get started with this project, follow these steps:
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/todo_list.git
-   cd todo_list
+   git clone https://github.com/yourusername/todo_list_elixir.git
+   cd todo_list_elixir
    ```
 
-2. **Setup and Start the Application**
+2. **Get Dependencies**
+
+   ```sh
+   mix deps.get
+   ```
+3. **Create .env file**
+   In this part unfortnately, Im still trying to figure it out how to keep those informations hiden in the repository but when it get cloned they would still be available.
+   ```sh
+   DATABASE_URL=your_database_url
+   SECRET_KEY_BASE=your_secret_key_base
+   API_KEY=your_api_key
+   ```
+   So actually there's nothing much you can do unless you have a Mailgun API Key and a Domain registered on Mailgun, then you can put your values and it will work.
+
+4. **Setup and Start the Application**
 
    Ensure you have Docker and Docker Compose installed. Run the following command to build and start the containers:
 
